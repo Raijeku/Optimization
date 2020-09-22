@@ -3,8 +3,7 @@ import pandas as pd
 
 def newton(x0, tolerance, function):
     x = Symbol('x')
-    parse_expr(function)
-    f = x**3
+    f = parse_expr(function)
     iteration = 0
     data = pd.DataFrame(columns=['iteration','x','df(x)','ddf(x)'])
 
@@ -14,7 +13,7 @@ def newton(x0, tolerance, function):
         dfx = df.subs(x,x0)
         ddfx = ddf.subs(x,x0)
         x1 = x0 - dfx/ddfx
-        data = data.append(pd.DataFrame({'iteration':[iteration],'x':[x0], 'df(x)':[dfx], 'ddf(x)':[ddfx]}), ignore_index = True)
+        data = data.append(pd.DataFrame({'iteration':[iteration],'x':[x0], 'df(x)':[dfx], 'ddf(x)':[ddfx], 'error':[x1]}), ignore_index = True)
         iteration = iteration + 1
         x0 = x1
 
