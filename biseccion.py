@@ -5,7 +5,7 @@ def biseccion(xl, xu, tolerance, function):
     x = Symbol('x')
     f = parse_expr(function)
     iteration = 0
-    data = pd.DataFrame(columns=['iteration','xl','xu','xr','f(xl)','f(xu)','f(xr)','f(xl)f(xr)'])
+    data = pd.DataFrame(columns=['iteration','xl','xu','xr','f(xl)','f(xu)','f(xr)','f(xl)f(xr)','error'])
 
     while abs(xu-xl)>=tolerance:
         xr = (xl + xu)/2
@@ -19,7 +19,10 @@ def biseccion(xl, xu, tolerance, function):
             xu = xr
         elif fxl*fxr>0:
             xl = xr
+    
+        iteration += 1
 
+    data.set_index('iteration', inplace=True)
     return data
 
 print(biseccion(10, 50, 0.01, '3*x**2 - 120*x + 100'))

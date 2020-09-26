@@ -27,4 +27,4 @@ def seccion_dorada(xl, xu, tolerance, function):
     data.set_index('iteration', inplace=True)
     return data
         
-print(seccion_dorada(0,4,0.01,'2*sin(x)-((x**2)/10)'))
+print(seccion_dorada(-2,4,0.01,'4*x-1.8*x**2+1.2*x**3-0.3*x**4'))
