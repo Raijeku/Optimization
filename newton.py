@@ -21,5 +21,5 @@ def newton(x0, tolerance, function):
     data.set_index('iteration', inplace=True)
     return data
 
-print(newton(6,0.01,'x**3'))
+print(newton(6,0.01,'-1.5*x**6-2*x**4+12*x'))
 
