@@ -57,6 +57,7 @@ def interpolacion_cuadratica(x0, x1, x2, tolerance, function, criteria = 'max'):
             nx3 = (((x1-x0)**2)*(fx1-fx2)-((x1-x2)**2)*(fx1-fx0))
             dx3 = 2*((x1-x0)*(fx1-fx2)-(x1-x2)*(fx1-fx0))
             x3 = float(x1-nx3/dx3)
+        fx3 = float(f.subs(x, x3))
 
         data = data.append(pd.DataFrame({'iteration':[iteration], 'x0':[x0], 'x1':[x1], 'x2':[x2], 'x3':[x3], 'f(x0)':[fx0], 'f(x1)':[fx1], 'f(x2)':[fx2], 'f(x3)':[fx3], 'error':[abs(x3-x1)]}), ignore_index = True)
         
