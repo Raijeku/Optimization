@@ -1,7 +1,7 @@
 from sympy import *
 import pandas as pd
 
-def biseccion(xl, xu, tolerance, function):
+def bisection(xl, xu, tolerance, function):
     x = Symbol('x')
     f = parse_expr(function)
     iteration = 0
@@ -25,4 +25,4 @@ def biseccion(xl, xu, tolerance, function):
     data.set_index('iteration', inplace=True)
     return data
 
-print(biseccion(10, 50, 0.01, '3*x**2 - 120*x + 100'))
+print(bisection(10, 50, 0.01, '3*x**2 - 120*x + 100'))

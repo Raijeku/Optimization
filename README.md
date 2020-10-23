@@ -1,3 +1,3 @@
-# Optimizacion
+# Optimization
 
-Repositorio donde guardo el código que implementa los métodos de optimización vistos en clase.
+Repository where I store the code that implements optimization methods seen in class.

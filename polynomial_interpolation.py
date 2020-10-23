@@ -1,7 +1,7 @@
 from sympy import *
 import pandas as pd
 
-def interpolacion_cuadratica(x0, x1, x2, tolerance, function, criteria = 'max'):
+def polynomial_interpolation(x0, x1, x2, tolerance, function, criteria = 'max'):
     x = Symbol('x')
     f = parse_expr(function)
     iteration = 0
@@ -68,4 +68,4 @@ def interpolacion_cuadratica(x0, x1, x2, tolerance, function, criteria = 'max'):
     data.set_index('iteration', inplace=True)
     return data
 
-print(interpolacion_cuadratica(0.1, 0.5, 5, 0.01, '2*x + 3/x', 'min'))
+print(polynomial_interpolation(0.1, 0.5, 5, 0.01, '2*x + 3/x', 'min'))
